@@ -8,8 +8,9 @@ $(error $(TOYBOX_GOAL) target is only supported on linux! ... For Now )
 else
 TARGET_PROVIDES_INIT_RC := true
 BUILD_TARGET_EXECUTABLE:= $(BUILD_EXECUTABLE)
+BUILD_TARGET_SHARED_LIBRARY:= $(BUILD_SHARED_LIBRARY)
 BUILD_EXECUTABLE:= $(call my-dir)/toybox_executable.mk
-$(info Making $(BUILD_TARGET_EXECUTABLE) $(BUILD_EXECUTABLE))
+BUILD_SHARED_LIBRARY:= $(call my-dir)/toybox_shared_library.mk
 BUILD_HOST_EXECUTABLE:=
 BUILD_HOST_SHARED_LIBRARY:=
 BUILD_HOST_STATIC_LIBRARY:=
