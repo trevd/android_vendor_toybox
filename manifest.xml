@@ -2,7 +2,7 @@
 <manifest>
 
   <remote  name="aosp"
-           fetch="https://android.googlesource.com/platform"
+           fetch="https://android.googlesource.com"
            review="https://android-review.googlesource.com/" />
     <remote  name="github"
            fetch="https://github.com"
@@ -14,38 +14,41 @@
 
 
 
-  <project name="build" clone-depth="1"  groups="toybox,toybox-bionic">
+  <project name="platform/build" path="build" clone-depth="1"  groups="toybox,toybox-bionic">
     <copyfile src="core/root.mk" dest="Makefile" />
     </project>
 
-    <project name="bionic" groups="toybox,toybox-bionic" clone-depth="1" />
 
-    <project name="external/toybox" groups="toybox,toybox-bionic" clone-depth="1" />
+    <project path="bionic"  name="platform/bionic" groups="toybox,toybox-bionic" clone-depth="1" />
 
-    <project name="external/compiler-rt" groups="toybox" clone-depth="1" />
-    <project name="external/jemalloc" groups="toybox" clone-depth="1" />
-    <project name="external/libcxx" groups="toybox" clone-depth="1" />
-    <project name="external/libcxxabi" groups="toybox" clone-depth="1" />
-    <project name="external/libnl" groups="toybox" clone-depth="1" />
-    <project name="external/libselinux" groups="toybox" clone-depth="1" />
-    <project name="external/libunwind" groups="toybox" clone-depth="1" />
-    <project name="external/mksh" groups="toybox" clone-depth="1" />
-    <project name="external/pcre" groups="toybox" clone-depth="1" />
+    <project path="external/toybox" name="platform/external/toybox" groups="toybox,toybox-bionic" clone-depth="1" />
 
-    <project name="external/zlib" groups="toybox" clone-depth="1" />
+    <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="toybox" clone-depth="1" />
+    <project path="external/jemalloc"  name="external/jemalloc" groups="toybox" clone-depth="1" />
+    <project path="external/libcxx" name="platform/external/libcxx" groups="toybox" clone-depth="1" />
+    <project path="external/libcxxabi" name="platform/external/libcxxabi" groups="toybox" clone-depth="1" />
+    <project path="external/libnl" name="platform/external/libnl" groups="toybox" clone-depth="1" />
+    <project path="external/libselinux" name="platform/external/libselinux" groups="toybox" clone-depth="1" />
+    <project path="external/libunwind" name="platform/external/libunwind" groups="toybox" clone-depth="1" />
+    <project path="external/mksh" name="platform/external/mksh" groups="toybox" clone-depth="1" />
+    <project path="external/pcre" name="platform/external/pcre" groups="toybox" clone-depth="1" />
 
-    <project name="libnativehelper" groups="toybox" clone-depth="1" />
+    <project path="external/zlib" name="platform/external/zlib" groups="toybox" clone-depth="1" />
 
-
-    <project name="system/core " groups="toybox" clone-depth="1" />
-    <project name="system/extras " groups="toybox" clone-depth="1" />
-
-    <!-- <project name="prebuilts/qemu-kernel " groups="toybox" clone-depth="1" /> -->
+    <project path="libnativehelper" name="platform/libnativehelper" groups="toybox" clone-depth="1" />
 
 
-    <project name="prebuilts/clang/linux-x86/host/3.6 " groups="toybox,toybox-bionic" clone-depth="1" />
-    <project name="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.8 " groups="toybox,toybox-bionic" clone-depth="1" />
-    <project name="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" groups="toybox,toybox-bionic" clone-depth="1" />
+    <project path="system/core"  name="platform/system/core" groups="toybox" clone-depth="1" />
+    <project path="system/extras" name="platform/system/extras" groups="toybox" clone-depth="1" />
+
+<!--
+     <project path="prebuilts/qemu-kernel" groups="toybox" clone-depth="1" />
+-->
+
+
+    <project path="prebuilts/clang/linux-x86/host/3.6" name="platform/prebuilts/clang/linux-x86/host/3.6" groups="toybox,toybox-bionic" clone-depth="1" />
+    <project path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.8" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.8" groups="toybox,toybox-bionic" clone-depth="1" />
+    <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" groups="toybox,toybox-bionic" clone-depth="1" />
 
     <project path="vendor/toybox" name="trevd/android_vendor_toybox" groups="toybox,toybox-bionic" clone-depth="1" remote="github" />
 
