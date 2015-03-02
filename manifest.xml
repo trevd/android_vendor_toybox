@@ -21,6 +21,9 @@
 
     <project path="bionic"  name="platform/bionic" groups="toybox,toybox-bionic" clone-depth="1" />
 
+    <project path="hardware/libhardware_legacy" name="platform/hardware/libhardware_legacy" groups="toybox" clone-depth="1" />
+    <project path="hardware/libhardware" name="platform/hardware/libhardware" groups="toybox" clone-depth="1" />
+
     <project path="external/toybox" name="platform/external/toybox" groups="toybox,toybox-bionic" clone-depth="1" />
 
     <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="toybox" clone-depth="1" />

@@ -1,13 +1,15 @@
-TOYBOX_GOAL:=toybox-test
 
+TOYBOX_GOAL:=toybox-test
+MAKECMDGOALS:=$(TOYBOX_GOAL)
 
 ifneq ($(filter $(MAKECMDGOALS),$(TOYBOX_GOAL)),)
 ifneq ($(HOST_OS),linux)
 $(error $(TOYBOX_GOAL) target is only supported on linux! ... For Now )
 else
-$(info Making $(TOYBOX_GOAL))
 TARGET_PROVIDES_INIT_RC := true
-
+BUILD_TARGET_EXECUTABLE:= $(BUILD_EXECUTABLE)
+BUILD_EXECUTABLE:= $(call my-dir)/toybox_executable.mk
+$(info Making $(BUILD_TARGET_EXECUTABLE) $(BUILD_EXECUTABLE))
 BUILD_HOST_EXECUTABLE:=
 BUILD_HOST_SHARED_LIBRARY:=
 BUILD_HOST_STATIC_LIBRARY:=
