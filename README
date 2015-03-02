@@ -8,10 +8,8 @@ Target "image" which can be run using a standard qemu system
 Getting Started - Testing Bionic Toybox when the HOST_ARCH == TARGET_ARCH
 =========================================================================
 
-repo init --depth 1 --manifest-url=https://github.com/trevd/android_vendor_toybox \
-                    --manifest-name=manifest.xml \
-                    --manifest-branch=master
-                    
+
+repo init --depth 1 -u https://github.com/trevd/android_vendor_toybox
 repo sync --current-branch
 
 source build/envsetup.sh
