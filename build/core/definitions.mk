@@ -1,8 +1,8 @@
 
 TOYBOX_GOAL:=toybox-test
-MAKECMDGOALS:=$(TOYBOX_GOAL)
 
-ifneq ($(filter $(MAKECMDGOALS),$(TOYBOX_GOAL)),)
+
+#ifneq ($(filter $(MAKECMDGOALS),$(TOYBOX_GOAL)),)
 ifneq ($(HOST_OS),linux)
 $(error $(TOYBOX_GOAL) target is only supported on linux! ... For Now )
 else
@@ -26,5 +26,5 @@ MKBOOTFS:=vendor/*/tools/mkbootfs$(BUILD_EXECUTABLE_SUFFIX)
 MINIGZIP:=vendor/*/tools/minigzip$(BUILD_EXECUTABLE_SUFFIX)
 TARGET_ROOT_OUT_SYSTEM:=$(TARGET_ROOT_OUT)/system
 endif # ($(HOST_OS),linux)
-endif # $(filter $(MAKECMDGOALS),$(TOYBOX_GOAL))
+#endif # $(filter $(MAKECMDGOALS),$(TOYBOX_GOAL))
 
