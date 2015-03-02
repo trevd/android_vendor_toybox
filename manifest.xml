@@ -44,9 +44,9 @@
     <project path="system/core"  name="platform/system/core" groups="toybox" clone-depth="1" />
     <project path="system/extras" name="platform/system/extras" groups="toybox" clone-depth="1" />
 
-<!--
-     <project path="prebuilts/qemu-kernel" groups="toybox" clone-depth="1" />
--->
+
+    <project  name="platform/prebuilts/qemu-kernel" path="prebuilts/qemu-kernel" groups="toybox" clone-depth="1" />
+    <project name="platform/prebuilts/android-emulator" path="prebuilts/android-emulator" groups="toybox" clone-depth="1" />
 
 
     <project path="prebuilts/clang/linux-x86/host/3.6" name="platform/prebuilts/clang/linux-x86/host/3.6" groups="toybox,toybox-bionic" clone-depth="1" />
