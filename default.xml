@@ -53,6 +53,6 @@
     <project path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.8" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.8" groups="toybox,toybox-bionic" clone-depth="1" />
     <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" groups="toybox,toybox-bionic" clone-depth="1" />
 
-    <project path="vendor/toybox" name="trevd/android_vendor_toybox" groups="toybox,toybox-bionic" clone-depth="1" remote="github" />
+    <project path="vendor/toybox" name="trevd/android_vendor_toybox" groups="toybox,toybox-bionic" clone-depth="1" revision="vendor" remote="github" />
 
 </manifest>
