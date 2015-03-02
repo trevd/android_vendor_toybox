@@ -4,10 +4,32 @@ Make Testing Toybox not a 5 Hour Affair
 This repo contains build system extensions to create a minimal Android
 Target "image" which can be run using a standard qemu system
 
+
+Getting Started - Testing Bionic Toybox when the HOST_ARCH == TARGET_ARCH
+=========================================================================
+
+repo init --depth 1 --manifest-url=https://github.com/trevd/android_vendor_toybox \
+                    --manifest-name=manifest.xml \
+                    --manifest-branch=master
+                    
+repo sync --current-branch
+
+source build/envsetup.sh
+
+lunch aosp_x86_64-eng
+
+make -j16 toybox-test
+
+sudo ln -s $ANDROID_PRODUCT_OUT/system /system 
+
+/system/bin/toybox 
+
+
 Contents
 ========
 
-vendorinit.sh
+                    
+                    
 
 ./build/core/definitions.mk
 Override standard build system variables to use our prebuilt versions
