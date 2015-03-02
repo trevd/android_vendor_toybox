@@ -1,3 +1,4 @@
+$(info Making $(MAKECMDGOALS))
 .PHONY: $(TOYBOX_GOAL)
 $(TOYBOX_GOAL): $(modules_to_install)
 	$(hide) mkdir -vp $(TARGET_ROOT_OUT_SYSTEM)
@@ -5,4 +6,5 @@ $(TOYBOX_GOAL): $(modules_to_install)
 	$(hide) $(MKBOOTFS) $(TARGET_ROOT_OUT) | $(MINIGZIP) > $(BUILT_RAMDISK_TARGET)
 
 droid: $(TOYBOX_GOAL)
+
 
