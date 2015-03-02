@@ -2,13 +2,51 @@
 <manifest>
 
   <remote  name="aosp"
-           fetch=".."
+           fetch="https://android.googlesource.com/platform"
            review="https://android-review.googlesource.com/" />
+    <remote  name="github"
+           fetch="https://github.com"
+            />
   <default revision="master"
            remote="aosp"
-           sync-j="4" />
+           sync-j="8"
+            />
 
-  <project path="build" name="platform/build" groups="pdk,tradefed" >
+
+
+  <project name="build" clone-depth="1"  groups="toybox,toybox-bionic">
     <copyfile src="core/root.mk" dest="Makefile" />
-</project>
+    </project>
+
+    <project name="bionic" groups="toybox,toybox-bionic" clone-depth="1" />
+
+    <project name="external/toybox" groups="toybox,toybox-bionic" clone-depth="1" />
+
+    <project name="external/compiler-rt" groups="toybox" clone-depth="1" />
+    <project name="external/jemalloc" groups="toybox" clone-depth="1" />
+    <project name="external/libcxx" groups="toybox" clone-depth="1" />
+    <project name="external/libcxxabi" groups="toybox" clone-depth="1" />
+    <project name="external/libnl" groups="toybox" clone-depth="1" />
+    <project name="external/libselinux" groups="toybox" clone-depth="1" />
+    <project name="external/libunwind" groups="toybox" clone-depth="1" />
+    <project name="external/mksh" groups="toybox" clone-depth="1" />
+    <project name="external/pcre" groups="toybox" clone-depth="1" />
+
+    <project name="external/zlib" groups="toybox" clone-depth="1" />
+
+    <project name="libnativehelper" groups="toybox" clone-depth="1" />
+
+
+    <project name="system/core " groups="toybox" clone-depth="1" />
+    <project name="system/extras " groups="toybox" clone-depth="1" />
+
+    <!-- <project name="prebuilts/qemu-kernel " groups="toybox" clone-depth="1" /> -->
+
+
+    <project name="prebuilts/clang/linux-x86/host/3.6 " groups="toybox,toybox-bionic" clone-depth="1" />
+    <project name="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.8 " groups="toybox,toybox-bionic" clone-depth="1" />
+    <project name="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" groups="toybox,toybox-bionic" clone-depth="1" />
+
+    <project path="vendor/toybox" name="trevd/android_vendor_toybox" groups="toybox,toybox-bionic" clone-depth="1" remote="github" />
+
 </manifest>
