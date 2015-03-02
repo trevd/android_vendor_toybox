@@ -20,7 +20,7 @@ lunch aosp_x86_64-eng
 
 make -j16 toybox-test
 
-sudo ln -s $ANDROID_PRODUCT/system /system 
+sudo ln -s $ANDROID_PRODUCT_OUT/system /system 
 
 /system/bin/toybox 
 
