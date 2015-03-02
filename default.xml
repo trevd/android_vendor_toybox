@@ -36,7 +36,7 @@
     <project path="external/mksh" name="platform/external/mksh" groups="toybox" clone-depth="1" />
     <project path="external/pcre" name="platform/external/pcre" groups="toybox" clone-depth="1" />
 
-    <project path="external/zlib" name="platform/external/zlib" groups="toybox" clone-depth="1" />
+    <project path="external/zlib" name="platform/external/zlib" groups="toybox" clone-depth="1" revision="refs/changes/50/137050/1" />
 
     <project path="libnativehelper" name="platform/libnativehelper" groups="toybox" clone-depth="1" />
 
